@@ -1,0 +1,16 @@
+# TODO_HOME
+- pandas, pandas, pandas
+  - .loc
+- These python libraries
+  - itertools
+  - pyodbc
+  - re
+  - pprint
+  - gc
+  - sys
+  - pd 
+    - .loc
+    - .astype
+    - .apply
+    - e.g.
+      - self.df.loc[self.df['JobDate'].astype(str).apply(lambda x: len(x) > 10), 'JobDate'] = self.df['JobDate'].astype(str).str[:10]
