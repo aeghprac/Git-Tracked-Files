@@ -1,5 +1,7 @@
 # Python + SQL Dudas and/or Preguntas and/or Notes
 
+# TODO
+  - Download Better Comments at work!
 # Python
 - ~~How do you print range between two numbers?~~
     - ~~print(range(1, 101))~~
