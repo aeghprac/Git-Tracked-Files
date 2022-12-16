@@ -1,0 +1,28 @@
+
+SELECT 
+     a.Name
+    ,a.Species
+    ,a.Breed
+    ,a.Primary_Color
+    ,b.Vaccination_Time
+    ,b.Vaccine
+    ,c.First_Name
+    ,c.Last_Name
+    ,d.Role
+
+FROM Animals AS a
+
+    LEFT OUTER JOIN Vaccinations AS b
+
+            LEFT OUTER JOIN Persons AS c --With this as outer, it puts all the nulls at the end.
+            
+                INNER JOIN Staff_Assignments AS d
+
+                ON c.Email = d.Email
+
+            ON b.Email = c.Email
+
+    ON a.Name = b.Name AND a.Species = b.Species
+;
+
+       
