@@ -23,6 +23,25 @@ FROM Animals AS a
             ON b.Email = c.Email
 
     ON a.Name = b.Name AND a.Species = b.Species
+
+--The below join also works - it puts only the LOJ predicate outside parentheses
+
+--   LEFT OUTER JOIN 
+
+--   (         Vaccinations AS b
+
+--             INNER JOIN Persons AS c 
+            
+--             ON b.Email = c.Email
+
+                
+--             INNER JOIN Staff_Assignments AS d
+
+--             ON c.Email = d.Email)
+
+
+--     ON a.Name = b.Name AND a.Species = b.Species
+
 ;
 
        
