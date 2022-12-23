@@ -9,6 +9,8 @@ SELECT * FROM Animals;
 
 Good first strategy is to SELECT(*) FROM X INNER JOIN Y just to see what you're working with
 */
+USE Animal_Shelter;
+GO
 
 SELECT 
 	A.Name
@@ -35,4 +37,4 @@ GROUP BY
 	,A.Breed
 HAVING MAX(V.Vaccination_Time) < '2019-10-01' -- Can also write '20191001' but looks like shit
 		OR MAX(V.Vaccination_Time) IS NULL
-ORDER BY VaxCount DESC
+ORDER BY VaxCount DESC;
