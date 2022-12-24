@@ -1,3 +1,6 @@
+USE Animal_Shelter;
+GO
+
 SELECT 
 
     * 
