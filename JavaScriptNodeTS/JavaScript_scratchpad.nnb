@@ -1,0 +1,185 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "# Node and JavaScript practice notebook\n## This is pretty snazzy!"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(\"Hello World!\");"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello World!",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "let a = 1;\nconsole.log(a);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "1",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### JS LIL Practice stuff"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const backpack = {\n    name: \"Everyday Backpack\",\n    volume: 30,\n    color: \"grey\",\n    pocketNum: 15,\n    strapLength: {\n        left: 26,\n        right: 26,\n    },\n    lidOpen: false,\n    toggleLid: function (lidStatus) {\n        this.lidOpen = lidStatus;\n    },\n    newStrapLength: function (lengthLeft, lengthRight) {\n        this.strapLength.left = lengthLeft;\n        this.strapLength.right = lengthRight;\n    },\n    changeName: function (newName) {\n        this.name = newName\n    },\n    adjustVolume: function (newVol) {\n        this.volume = newVol\n    },\n    changeColor (newColor) {\n        this.color = newColor\n    }\n};\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(backpack)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{",
+                                "  name: 'Everyday Backpack',",
+                                "  volume: 30,",
+                                "  color: 'grey',",
+                                "  pocketNum: 15,",
+                                "  strapLength: { left: 26, right: 26 },",
+                                "  lidOpen: false,",
+                                "  toggleLid: [Function: toggleLid],",
+                                "  newStrapLength: [Function: newStrapLength]",
+                                "}",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "backpack.lidOpen"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mfalse\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "backpack.toggleLid"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[36m[Function: toggleLid]\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "// Calls lid function and sets status to true\nbackpack.toggleLid(true)"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "backpack.lidOpen"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mtrue\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "backpack.changeColor(\"black\")"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "console.log(backpack.color)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "black",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
