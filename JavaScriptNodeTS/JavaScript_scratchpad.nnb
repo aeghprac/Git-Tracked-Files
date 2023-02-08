@@ -177,6 +177,25 @@
         {
             "language": "javascript",
             "source": [
+                "console.log(\"Is this updating in git?\")"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Is this updating in git?",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
                 ""
             ],
             "outputs": []
