@@ -1,3 +1,10 @@
+##############################3
+##############################
+# This script takes a raw address data file and splits the address into separate columns for street address, city, state, and zipcode.
+# Date: 2021-02-16
+#############################
+#############################
+
 import pandas as pd
 import re
 
