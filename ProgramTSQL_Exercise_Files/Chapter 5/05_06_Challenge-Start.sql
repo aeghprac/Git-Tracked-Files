@@ -10,8 +10,7 @@ GO
 INSERT INTO dbo.BankAccounts
     VALUES (1, 100.00), (2, 200.00), (3, 300.00);
 GO
-SELECT * FROM dbo.BankAccounts;
-GO
+
 
 -- Create a stored procedure that contains a transaction for transferring funds
 -- Then use the stored procedure to transfer 50.00 from Account 1 to Account 3.
@@ -37,7 +36,7 @@ BEGIN TRY
 				WHERE AccountID = @FromAccount
 			) 
 			IS NULL
-			THROW 51000 'The source bank account does not exist', 1;
+			THROW 51000, 'The source bank account does not exist', 1;
 		END;
 
 		BEGIN
@@ -47,7 +46,7 @@ BEGIN TRY
 				WHERE AccountID = @ToAccount
 			) 
 			IS NULL
-			THROW 52000 'The target bank account does not exist', 1;
+			THROW 52000, 'The target bank account does not exist', 1;
 		END;
 
 		BEGIN
@@ -58,7 +57,7 @@ BEGIN TRY
 							WHERE AccountID = @FromAccount
 						  ) 
 			)	   
-			THROW 53000 'Insufficient funds for transfer', 1;
+			THROW 53000, 'Insufficient funds for transfer', 1;
 		END;
 
 		UPDATE dbo.BankAccounts
@@ -71,16 +70,23 @@ BEGIN TRY
 
 	COMMIT TRANSACTION;
 
-	BEGIN CATCH
+END TRY
 
-	END CATCH
+BEGIN CATCH
+		
+		ROLLBACK TRANSACTION;
+		PRINT 'ERROR: ' + ERROR_MESSAGE();
+
+END CATCH;
 
 
 SET XACT_ABORT OFF;
 
 ;
+
 GO
 
-EXEC dbo.TransferFunds 1, 3, 50.00;
+EXEC dbo.TransferFunds 1, 2, 500.00;
 
-SELECT * FROM dbo.BankAccounts;
+SELECT * 
+FROM dbo.BankAccounts;
